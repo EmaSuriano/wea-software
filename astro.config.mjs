@@ -4,6 +4,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://master--kreatif-software.netlify.app",
+  site: "https://emasuriano.github.io",
+  base: "wea-software",
   integrations: [tailwind({ configFile: "./tailwind.config.mjs" })],
 });
