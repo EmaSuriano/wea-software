@@ -1,68 +1,55 @@
 ---
-import SectionTitle from "../ui/SectionTitle.astro";
-import TeamCard from "../ui/TeamCard.astro";
-import Section from "./Section.astro";
+import SectionTitle from '../ui/SectionTitle.astro';
+import TeamCard from '../ui/TeamCard.astro';
+import Section from './Section.astro';
+
+import ema from '../../assets/pics/ema.png';
+import santi from '../../assets/pics/santi.png';
+import fede from '../../assets/pics/fede.png';
+import tebi from '../../assets/pics/tebi.png';
+import joa from '../../assets/pics/joa.png';
+import juli from '../../assets/pics/juli.png';
 
 const description =
-  "Meet the skilled and experienced team behind our successful digital marketing strategies";
-
-import {
-  default as p1,
-  default as p2,
-  default as p3,
-  default as p4,
-  default as p5,
-  default as p6,
-} from "../../assets/pics/profile-pic.png";
+  'Meet the skilled and experienced team behind our successful digital marketing strategies';
 
 const team = [
   {
-    pic: p1,
-    name: "Maria Katz",
-    role: "CEO",
-    description:
-      "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis",
-    link: "https://linkedin.com",
+    pic: tebi,
+    name: 'Esteban Barret',
+    role: 'CEO',
+    description: 'Comunmente conocido como Tebi',
   },
   {
-    pic: p2,
-    name: "Maria Katz",
-    role: "CEO",
-    description:
-      "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis",
-    link: "https://linkedin.com",
+    pic: joa,
+    name: 'Joaquin Fontana',
+    role: 'CEO',
+    description: 'Conoces a Kratos, bueno aca lo tenes en persona',
   },
   {
-    pic: p3,
-    name: "Maria Katz",
-    role: "CEO",
-    description:
-      "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis",
-    link: "https://linkedin.com",
+    pic: juli,
+    name: 'Julian Lado',
+    role: 'CEO',
+    description: 'Nunca vas a conocer su depto, pero es buena persona',
   },
   {
-    pic: p4,
-    name: "Maria Katz",
-    role: "CEO",
-    description:
-      "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis",
-    link: "https://linkedin.com",
+    pic: santi,
+    name: 'Santiago Canti',
+    role: 'CEO',
+    description: 'Pensando en vivir en comprar un terreno y cultivar lechugas',
   },
   {
-    pic: p5,
-    name: "Maria Katz",
-    role: "CEO",
+    pic: ema,
+    name: 'Emanuel Suriano',
+    role: 'CEO',
     description:
-      "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis",
-    link: "https://linkedin.com",
+      'Tiene problemas de concentracion, y le gusta perder el tiempo haciendo paginas como esta',
   },
   {
-    pic: p6,
-    name: "Maria Katz",
-    role: "CEO",
-    description:
-      "3+ years of experience in paid search advertising. Skilled in campaign management and performance analys",
-    link: "https://linkedin.com",
+    pic: fede,
+    name: 'Federico Casabona',
+    role: 'CEO',
+    description: 'Quizas haya jugado mas RPG que la media del mundo',
   },
 ];
 ---
@@ -71,7 +58,7 @@ const team = [
   <div class="mt-[140px]">
     <SectionTitle sectionTitle="Team" description={description} />
     <div
-      class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-rows-2 gap-10"
+      class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-rows-2 gap-10 pb-2"
     >
       {
         team.map((member, index) => (
@@ -81,13 +68,9 @@ const team = [
             name={member.name}
             role={member.role}
             description={member.description}
-            link={member.link}
           />
         ))
       }
-    </div>
-    <div class="flex justify-end mt-10">
-      <button class="btn-primary">See all team</button>
     </div>
   </div>
 </Section>

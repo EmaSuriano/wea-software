@@ -1,31 +1,16 @@
 ---
-import { Image } from "astro:assets";
+import { Image } from 'astro:assets';
 
 const navLinks = [
-  {
-    name: "About us",
-    href: "#about",
-  },
-  {
-    name: "Services",
-    href: "#services",
-  },
-  {
-    name: "Use cases",
-    href: "#cases",
-  },
-  {
-    name: "Testimonials",
-    href: "#testimonials",
-  },
-  {
-    name: "Contact",
-    href: "#contact",
-  },
+  { name: 'Services', href: '#services' },
+  { name: 'Use cases', href: '#cases' },
+  { name: 'About us', href: '#about' },
+  { name: 'Testimonials', href: '#testimonials' },
+  { name: 'Contact', href: '#contact' },
 ];
 
-import bars from "../../assets/bars.svg";
-import brand from "../../assets/brand.svg";
+import bars from '../../assets/bars.svg';
+import brand from '../../assets/brand.svg';
 ---
 
 <div
@@ -66,7 +51,11 @@ import brand from "../../assets/brand.svg";
 
       <!-- Login -->
       <div class="flex xl:flex-row xl:items-center px-4 xl:gap-4 flex-col">
-        <button class="btn-secondary">Request a quote</button>
+        <button
+          class="btn-secondary"
+          onclick="alert('Si dale ya te mando el mail amigo')"
+          >Request a quote</button
+        >
       </div>
     </div>
 
@@ -84,44 +73,44 @@ import brand from "../../assets/brand.svg";
   </nav>
 </div>
 <script>
-  document.addEventListener("DOMContentLoaded", (_) => {
-    const menuButton = document.getElementById("menuButton");
-    const navMenu = document.getElementById("navmenu");
+  document.addEventListener('DOMContentLoaded', (_) => {
+    const menuButton = document.getElementById('menuButton');
+    const navMenu = document.getElementById('navmenu');
 
     let isMenuOpen = false;
 
     if (menuButton && navMenu) {
-      menuButton.addEventListener("click", () => {
+      menuButton.addEventListener('click', () => {
         /* Handle the height transition */
         isMenuOpen = !isMenuOpen;
 
-        menuButton.setAttribute("aria-expanded", `${isMenuOpen}`);
+        menuButton.setAttribute('aria-expanded', `${isMenuOpen}`);
 
         if (isMenuOpen) {
           navMenu.style.height = `${navMenu.scrollHeight}px`;
         } else {
-          navMenu.style.height = "0px";
+          navMenu.style.height = '0px';
         }
       });
 
-      navMenu.addEventListener("click", () => {
+      navMenu.addEventListener('click', () => {
         /* Close menu after using it */
         if (isMenuOpen) {
           isMenuOpen = false;
-          navMenu.style.height = "0px";
-          navMenu.classList.remove("h-auto");
+          navMenu.style.height = '0px';
+          navMenu.classList.remove('h-auto');
         }
       });
 
-      window.addEventListener("resize", () => {
+      window.addEventListener('resize', () => {
         /* Resize cleanup screen state*/
         if (window.innerWidth >= 1280) {
           /* Add height if menu was closed and then resize happened */
-          navMenu.style.height = "auto";
-          navMenu.classList.remove("h-0");
+          navMenu.style.height = 'auto';
+          navMenu.classList.remove('h-0');
         } else {
           /* Prevent opened menu when going from bit to small */
-          navMenu.style.height = "0px";
+          navMenu.style.height = '0px';
         }
       });
     }

@@ -1,12 +1,12 @@
 ---
-import { Image } from "astro:assets";
-import decorForm from "../../assets/pics/contact-pic.png";
+import { Image } from 'astro:assets';
+import decorForm from '../../assets/pics/contact-pic.png';
 ---
 
 <div
   class="flex relative justify-start items-center p-[60px] bg-[#F3F3F3] rounded-[45px] overflow-hidden"
 >
-  <form class="bg-white sm:p-6 h-full w-full lg:max-w-lg">
+  <div class="bg-white sm:p-6 h-full w-full lg:max-w-lg">
     <div class="flex flex-col sm:flex-row gap-[35px] sm:items-center mb-10">
       <div class="flex items-center gap-[14px]">
         <input
@@ -62,8 +62,11 @@ import decorForm from "../../assets/pics/contact-pic.png";
       ></textarea>
     </div>
 
-    <button type="submit" name="submit" class="btn-primary w-full">Send</button>
-  </form>
+    <button
+      class="btn-primary w-full"
+      onclick="alert('Si dale ya te mando el mail amigo')">Send</button
+    >
+  </div>
   <picture class="absolute right-[-25%] top-[2%] bottom-[2%] hidden lg:block">
     <Image src={decorForm} alt="decor" />
   </picture>
@@ -81,7 +84,7 @@ import decorForm from "../../assets/pics/contact-pic.png";
   }
 
   .form-checkbox:before {
-    content: "";
+    content: '';
     display: block;
     width: 100%;
     height: 100%;
@@ -100,27 +103,27 @@ import decorForm from "../../assets/pics/contact-pic.png";
 </style>
 <script>
   function formSetup() {
-    var cb1 = document.getElementById("checkbox1") as HTMLInputElement;
-    var cb2 = document.getElementById("checkbox2") as HTMLInputElement;
-    var message = document.getElementById("message") as HTMLInputElement;
+    var cb1 = document.getElementById('checkbox1') as HTMLInputElement;
+    var cb2 = document.getElementById('checkbox2') as HTMLInputElement;
+    var message = document.getElementById('message') as HTMLInputElement;
 
     if (cb1 && cb2) {
       cb1.checked = true;
 
-      cb2.addEventListener("change", function () {
+      cb2.addEventListener('change', function () {
         if (cb2.checked) {
           cb1.checked = false;
           message.value =
             "We're interested in your services! Please contact us";
         } else {
-          message.value = "";
+          message.value = '';
           cb1.checked = true;
         }
       });
-      cb1.addEventListener("change", function () {
+      cb1.addEventListener('change', function () {
         if (cb1.checked) {
           cb2.checked = false;
-          message.value = "";
+          message.value = '';
         } else {
           cb2.checked = true;
           message.value =
@@ -131,5 +134,5 @@ import decorForm from "../../assets/pics/contact-pic.png";
   }
 
   formSetup();
-  document.addEventListener("astro:after-swap", formSetup);
+  document.addEventListener('astro:after-swap', formSetup);
 </script>
